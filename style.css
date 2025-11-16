@@ -29,28 +29,59 @@ body {
   justify-content: center;
 }
 
+/* CARD PRINCIPAL com fundo.jpg */
 .tf-card {
+  position: relative;
   width: min(1200px, 66.666vw);
   aspect-ratio: 16 / 7;
   border-radius: 40px;
   overflow: hidden;
-  /* FALLBACK: cor rosa caso a imagem não carregue */
   background-color: #d896c5;
-  /* Tente TODOS estes caminhos (um deles vai funcionar): */
-  background-image: url("assets/images/fundo.jpg");
-  /* Se não funcionar, tente: url("./fundo.jpg") */
-  /* Se não funcionar, tente: url("assets/fundo.jpg") */
+  background-image: url("fundo.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
-  /* altura mínima para garantir que apareça */
   min-height: 400px;
+  /* permite posicionamento absoluto dos elementos internos */
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px;
 }
 
+/* CONTAINER DA ONDA-LOGO 
+   Posicionado na parte inferior-central, ocupando ~70% da largura
+   e deixando espaço para os thumbnails acima e a arte lateral à direita */
+.tf-wave-container {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 800px;
+  height: auto;
+  z-index: 1;
+}
+
+/* IMAGEM DA ONDA-LOGO */
+.tf-wave-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* sombra sutil para destacar sobre o fundo rosa */
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* RESPONSIVIDADE */
 @media (max-width: 900px) {
   .tf-card {
     width: 90vw;
     border-radius: 24px;
+    padding: 30px 40px;
+  }
+
+  .tf-wave-container {
+    width: 75%;
+    bottom: 50px;
   }
 }
 
@@ -59,5 +90,11 @@ body {
     width: 94vw;
     border-radius: 20px;
     aspect-ratio: 3 / 4;
+    padding: 24px 30px;
+  }
+
+  .tf-wave-container {
+    width: 85%;
+    bottom: 40px;
   }
 }
