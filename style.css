@@ -43,7 +43,7 @@ body {
   padding: 40px 60px;
   background: #d474b0;
   /* textura de fundo usando o PNG fornecido */
-  background-image: url("fundo.png");
+  background-image: url("fundo.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
