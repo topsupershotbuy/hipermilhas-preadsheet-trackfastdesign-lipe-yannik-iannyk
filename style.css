@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css – versão somente com o fundo responsivo usando fundo.jpg */
 
 /* RESET SIMPLES */
 *,
@@ -16,213 +16,50 @@ body {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #000;
+  background-color: #000;           /* bordas externas pretas como no demo */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ÁREA TOTAL DO TEMPLATE (IMITANDO O QUADRO CENTRAL DO DEMO) */
+/* CONTAINER EXTERNO – ocupa toda a tela e centraliza o card */
 .tf-page {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* CARTÃO / BOARD PRINCIPAL */
+/* CARD PRINCIPAL:
+   - largura máxima 1200px
+   - ocupa ~2/3 da largura da tela (no máximo 90vw)
+   - proporção aproximada do template-demo
+   - fundo com a imagem fundo.jpg */
 .tf-card {
-  position: relative;
-  width: min(1200px, 90vw);
+  width: min(1200px, 66.666vw);   /* ~2/3 da largura da tela */
+  /* altura proporcional à largura; ajuste fino se quiser 16/7, 16/6 etc. */
   aspect-ratio: 16 / 7;
   border-radius: 40px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 40px 60px;
-  background: #d474b0;
-  /* textura de fundo usando o PNG fornecido */
   background-image: url("fundo.jpg");
-  background-size: cover;
+  background-size: cover;         /* cobre todo o card, como no PNG demo */
   background-position: center;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
 }
 
-/* CABEÇALHO / BOTÃO DOWNLOAD */
-.tf-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 40px;
-}
-
-.tf-download-btn {
-  padding: 10px 40px;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  border-radius: 999px;
-  border: 3px solid #000;
-  background: rgba(255, 255, 255, 0.3);
-  color: #000;
-  cursor: pointer;
-  box-shadow: 0 4px 0 #000;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-/* Interação hover / click apenas visual.
-   Hyperlink real será adicionado depois. */
-.tf-download-btn:hover {
-  background: rgba(255, 255, 255, 0.5);
-  transform: translateY(-1px);
-  box-shadow: 0 5px 0 #000;
-}
-
-.tf-download-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 #000;
-}
-
-/* CONTEÚDO CENTRAL */
-.tf-content {
-  position: relative;
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 24px;
-}
-
-/* FAIXA COM GRADIENTE + LOGO */
-.tf-wave-strip {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  border-radius: 32px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-/* imagem da onda (onda-assinatura-logo.png) */
-.tf-wave-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* COLUNA LATERAL DIREITA (arte vertical) */
-.tf-side-art {
-  width: 72px;
-  height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background: #f5f5f5;
-}
-
-/* aqui usamos o mesmo PNG de onda; você pode
-   recortar e trocar depois, mantendo esta classe */
-.tf-side-art-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* GRADE DE THUMBNAILS EM CIMA DA ONDA */
-.tf-thumbs-wrapper {
-  position: absolute;
-  left: 8%;
-  top: 10%;
-  width: 60%;
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-}
-
-/* cada bloco com uma miniatura (templateX.png) */
-.tf-thumb {
-  width: 150px;
-  height: 210px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-  background: #000;
-}
-
-.tf-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* RODAPÉ: deixa espaço para inserir textos de orçamento depois */
-.tf-footer {
-  margin-top: 30px;
-  min-height: 10px; /* apenas um espaçador por enquanto */
-}
-
-/* RESPONSIVIDADE BÁSICA */
+/* RESPONSIVIDADE – telas menores */
 @media (max-width: 900px) {
   .tf-card {
-    padding: 30px 24px;
+    width: 90vw;                  /* em telas pequenas, usa quase toda a largura */
     border-radius: 24px;
-  }
-
-  .tf-download-btn {
-    padding: 8px 26px;
-    font-size: 12px;
-  }
-
-  .tf-wave-strip,
-  .tf-side-art {
-    height: 180px;
-  }
-
-  .tf-thumbs-wrapper {
-    left: 6%;
-    top: 12%;
-    width: 70%;
-    gap: 14px;
-  }
-
-  .tf-thumb {
-    width: 110px;
-    height: 155px;
-  }
-
-  .tf-side-art {
-    width: 60px;
   }
 }
 
 @media (max-width: 640px) {
   .tf-card {
-    aspect-ratio: 3 / 4;
-  }
-
-  .tf-content {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  .tf-side-art {
-    position: absolute;
-    right: 12px;
-    bottom: 40px;
-    width: 52px;
-    height: 160px;
-  }
-
-  .tf-thumbs-wrapper {
-    top: 18%;
-    left: 8%;
-    width: 80%;
-    gap: 10px;
+    width: 94vw;
+    border-radius: 20px;
+    aspect-ratio: 3 / 4;          /* fica mais vertical para caber melhor */
   }
 }
