@@ -50,18 +50,18 @@ body {
 /* GRUPO INFERIOR: ONDA + ASSINATURA (centralizados como um bloco único) */
 .tf-bottom-group {
   position: absolute;
-  bottom: 450px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 10px;
+  gap: 20px;
   z-index: 1;
 }
 
 /* CONTAINER DA ONDA-LOGO */
 .tf-wave-container {
-  width: 700px;
+  width: 800px;
   max-width: 60vw;
   height: auto;
 }
@@ -76,7 +76,7 @@ body {
 
 /* CONTAINER DA ASSINATURA VERTICAL */
 .tf-signature-container {
-  width: 70px;
+  width: 80px;
   height: auto;
   flex-shrink: 0;
 }
