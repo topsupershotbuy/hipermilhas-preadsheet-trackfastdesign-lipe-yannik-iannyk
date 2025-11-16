@@ -47,16 +47,23 @@ body {
   padding: 40px 60px;
 }
 
-/* CONTAINER DA ONDA-LOGO */
-.tf-wave-container {
+/* GRUPO INFERIOR: ONDA + ASSINATURA (centralizados como um bloco único) */
+.tf-bottom-group {
   position: absolute;
   bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70%;
-  max-width: 800px;
-  height: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
   z-index: 1;
+}
+
+/* CONTAINER DA ONDA-LOGO */
+.tf-wave-container {
+  width: 800px;
+  max-width: 60vw;
+  height: auto;
 }
 
 /* IMAGEM DA ONDA-LOGO */
@@ -67,6 +74,21 @@ body {
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
 }
 
+/* CONTAINER DA ASSINATURA VERTICAL */
+.tf-signature-container {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* IMAGEM DA ASSINATURA */
+.tf-signature {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 900px) {
   .tf-card {
@@ -75,9 +97,18 @@ body {
     padding: 30px 40px;
   }
 
-  .tf-wave-container {
-    width: 75%;
+  .tf-bottom-group {
     bottom: 50px;
+    gap: 16px;
+  }
+
+  .tf-wave-container {
+    width: 600px;
+    max-width: 55vw;
+  }
+
+  .tf-signature-container {
+    width: 65px;
   }
 }
 
@@ -89,8 +120,17 @@ body {
     padding: 24px 30px;
   }
 
-  .tf-wave-container {
-    width: 85%;
+  .tf-bottom-group {
     bottom: 40px;
+    gap: 12px;
+  }
+
+  .tf-wave-container {
+    width: 450px;
+    max-width: 65vw;
+  }
+
+  .tf-signature-container {
+    width: 50px;
   }
 }
