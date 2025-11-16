@@ -51,7 +51,7 @@ body {
 .tf-bottom-group {
   position: absolute;
   bottom: 35px;              /* ← AJUSTADO: mais próximo do fundo */
-  left: 38%;
+  left: 45%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
@@ -62,7 +62,7 @@ body {
 /* CONTAINER DA ONDA-LOGO */
 .tf-onda-container {
   width: 710px;              /* ← AJUSTADO: tamanho menor (era 800px) */
-  max-width: 50vw;           /* ← AJUSTADO: máximo 50% da tela */
+  max-width: 60vw;           /* ← AJUSTADO: máximo 50% da tela */
   height: auto;
 }
 
@@ -76,7 +76,7 @@ body {
 
 /* CONTAINER DA ASSINATURA VERTICAL */
 .tf-assinatura-container {
-  width: 67px;               /* ← AJUSTADO: tamanho menor (era 80px) */
+  width: 72px;               /* ← AJUSTADO: tamanho menor (era 80px) */
   height: auto;
   flex-shrink: 0;
 }
