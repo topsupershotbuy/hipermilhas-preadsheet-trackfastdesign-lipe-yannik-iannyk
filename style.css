@@ -47,46 +47,46 @@ body {
   padding: 40px 60px;
 }
 
-/* GRUPO INFERIOR: ONDA + ASSINATURA (centralizados como um bloco único) */
+/* GRUPO INFERIOR: ONDA + ASSINATURA */
 .tf-bottom-group {
   position: absolute;
-  bottom: 60px;
+  bottom: 35px;              /* ← AJUSTADO: mais próximo do fundo */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 20px;
+  gap: 10px;                 /* ← AJUSTADO: espaço menor entre elementos */
   z-index: 1;
 }
 
 /* CONTAINER DA ONDA-LOGO */
-.tf-wave-container {
-  width: 800px;
-  max-width: 60vw;
+.tf-onda-container {
+  width: 500px;              /* ← AJUSTADO: tamanho menor (era 800px) */
+  max-width: 50vw;           /* ← AJUSTADO: máximo 50% da tela */
   height: auto;
 }
 
 /* IMAGEM DA ONDA-LOGO */
-.tf-wave-logo {
+.tf-onda-logo {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
 }
 
 /* CONTAINER DA ASSINATURA VERTICAL */
-.tf-signature-container {
-  width: 80px;
+.tf-assinatura-container {
+  width: 60px;               /* ← AJUSTADO: tamanho menor (era 80px) */
   height: auto;
   flex-shrink: 0;
 }
 
 /* IMAGEM DA ASSINATURA */
-.tf-signature {
+.tf-assinatura {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
 }
 
 /* RESPONSIVIDADE */
@@ -98,17 +98,17 @@ body {
   }
 
   .tf-bottom-group {
-    bottom: 50px;
-    gap: 16px;
+    bottom: 35px;
+    gap: 12px;
   }
 
-  .tf-wave-container {
-    width: 600px;
-    max-width: 55vw;
+  .tf-onda-container {
+    width: 420px;
+    max-width: 48vw;
   }
 
-  .tf-signature-container {
-    width: 65px;
+  .tf-assinatura-container {
+    width: 50px;
   }
 }
 
@@ -121,16 +121,16 @@ body {
   }
 
   .tf-bottom-group {
-    bottom: 40px;
-    gap: 12px;
+    bottom: 30px;
+    gap: 10px;
   }
 
-  .tf-wave-container {
-    width: 450px;
-    max-width: 65vw;
+  .tf-onda-container {
+    width: 320px;
+    max-width: 55vw;
   }
 
-  .tf-signature-container {
-    width: 50px;
+  .tf-assinatura-container {
+    width: 40px;
   }
 }
