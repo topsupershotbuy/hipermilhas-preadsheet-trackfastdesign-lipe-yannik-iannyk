@@ -37,7 +37,7 @@ body {
   border-radius: 40px;
   overflow: hidden;
   background-color: #d896c5;
-  background-image: url("fundo.jpg");
+  background-image: url("assets/images/fundo.jpg");  
   background-size: cover;
   background-position: center;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
