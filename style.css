@@ -1,6 +1,5 @@
-/* style.css – versão somente com o fundo responsivo usando fundo.jpg */
+/* style.css */
 
-/* RESET SIMPLES */
 *,
 *::before,
 *::after {
@@ -16,13 +15,12 @@ body {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #000;           /* bordas externas pretas como no demo */
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* CONTAINER EXTERNO – ocupa toda a tela e centraliza o card */
 .tf-page {
   width: 100vw;
   height: 100vh;
@@ -31,27 +29,27 @@ body {
   justify-content: center;
 }
 
-/* CARD PRINCIPAL:
-   - largura máxima 1200px
-   - ocupa ~2/3 da largura da tela (no máximo 90vw)
-   - proporção aproximada do template-demo
-   - fundo com a imagem fundo.jpg */
 .tf-card {
-  width: min(1200px, 66.666vw);   /* ~2/3 da largura da tela */
-  /* altura proporcional à largura; ajuste fino se quiser 16/7, 16/6 etc. */
+  width: min(1200px, 66.666vw);
   aspect-ratio: 16 / 7;
   border-radius: 40px;
   overflow: hidden;
-  background-image: url("fundo.jpg");
-  background-size: cover;         /* cobre todo o card, como no PNG demo */
+  /* FALLBACK: cor rosa caso a imagem não carregue */
+  background-color: #d896c5;
+  /* Tente TODOS estes caminhos (um deles vai funcionar): */
+  background-image: url("assets/images/fundo.jpg");
+  /* Se não funcionar, tente: url("./fundo.jpg") */
+  /* Se não funcionar, tente: url("assets/fundo.jpg") */
+  background-size: cover;
   background-position: center;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
+  /* altura mínima para garantir que apareça */
+  min-height: 400px;
 }
 
-/* RESPONSIVIDADE – telas menores */
 @media (max-width: 900px) {
   .tf-card {
-    width: 90vw;                  /* em telas pequenas, usa quase toda a largura */
+    width: 90vw;
     border-radius: 24px;
   }
 }
@@ -60,6 +58,6 @@ body {
   .tf-card {
     width: 94vw;
     border-radius: 20px;
-    aspect-ratio: 3 / 4;          /* fica mais vertical para caber melhor */
+    aspect-ratio: 3 / 4;
   }
 }
