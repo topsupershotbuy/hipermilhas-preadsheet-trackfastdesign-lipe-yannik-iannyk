@@ -50,18 +50,18 @@ body {
 /* GRUPO INFERIOR: ONDA + ASSINATURA */
 .tf-bottom-group {
   position: absolute;
-  bottom: 49px;              /* ← AJUSTADO: mais próximo do fundo */
+  bottom: 56px;              /* ← AJUSTADO: mais próximo do fundo */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 011px;                 /* ← AJUSTADO: espaço menor entre elementos */
+  gap: 014px;                 /* ← AJUSTADO: espaço menor entre elementos */
   z-index: 1;
 }
 
 /* CONTAINER DA ONDA-LOGO */
 .tf-onda-container {
-  width: 585px;              /* ← AJUSTADO: tamanho menor (era 800px) */
+  width: 601px;              /* ← AJUSTADO: tamanho menor (era 800px) */
   max-width: 60vw;           /* ← AJUSTADO: máximo 50% da tela */
   height: auto;
 }
@@ -76,7 +76,7 @@ body {
 
 /* CONTAINER DA ASSINATURA VERTICAL */
 .tf-assinatura-container {
-  width: 71px;               /* ← AJUSTADO: tamanho menor (era 80px) */
+  width: 67px;               /* ← AJUSTADO: tamanho menor (era 80px) */
   height: auto;
   flex-shrink: 0;
 }
