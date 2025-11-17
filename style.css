@@ -47,22 +47,50 @@ body {
   padding: 40px 60px;
 }
 
+/* GRID DE THUMBNAILS (4 imagens em linha) */
+.tf-thumbnails-grid {
+  position: absolute;
+  top: 50px;                    /* ← Distância do topo */
+  left: 60px;                   /* ← Distância da esquerda */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* ← 4 colunas iguais */
+  gap: 13px;                    /* ← Espaço entre thumbnails */
+  width: 600px;                 /* ← Largura total do grid */
+  z-index: 2;
+}
+
+/* CADA THUMBNAIL */
+.tf-thumbnail {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;          /* ← Quadrado perfeito */
+  object-fit: cover;            /* ← Corta imagem para caber sem distorcer */
+  border-radius: 12px;          /* ← Cantos arredondados */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);  /* ← Sombra */
+  transition: transform 0.3s ease;  /* ← Animação suave */
+}
+
+/* EFEITO HOVER (quando passar mouse) */
+.tf-thumbnail:hover {
+  transform: scale(1.10);       /* ← Aumenta 10% ao passar mouse */
+}
+
 /* GRUPO INFERIOR: ONDA + ASSINATURA */
 .tf-bottom-group {
   position: absolute;
-  bottom: 56px;              /* ← AJUSTADO: mais próximo do fundo */
+  bottom: 56px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 014px;                 /* ← AJUSTADO: espaço menor entre elementos */
+  gap: 14px;
   z-index: 1;
 }
 
 /* CONTAINER DA ONDA-LOGO */
 .tf-onda-container {
-  width: 601px;              /* ← AJUSTADO: tamanho menor (era 800px) */
-  max-width: 60vw;           /* ← AJUSTADO: máximo 50% da tela */
+  width: 601px;
+  max-width: 60vw;
   height: auto;
 }
 
@@ -76,7 +104,7 @@ body {
 
 /* CONTAINER DA ASSINATURA VERTICAL */
 .tf-assinatura-container {
-  width: 67px;               /* ← AJUSTADO: tamanho menor (era 80px) */
+  width: 67px;
   height: auto;
   flex-shrink: 0;
 }
@@ -95,6 +123,13 @@ body {
     width: 90vw;
     border-radius: 24px;
     padding: 30px 40px;
+  }
+
+  .tf-thumbnails-grid {
+    top: 40px;
+    left: 40px;
+    width: 520px;
+    gap: 14px;
   }
 
   .tf-bottom-group {
@@ -120,6 +155,14 @@ body {
     padding: 24px 30px;
   }
 
+  .tf-thumbnails-grid {
+    top: 30px;
+    left: 30px;
+    width: 100%;
+    max-width: 400px;
+    gap: 10px;
+  }
+
   .tf-bottom-group {
     bottom: 30px;
     gap: 10px;
@@ -133,5 +176,4 @@ body {
   .tf-assinatura-container {
     width: 40px;
   }
-}
 }
