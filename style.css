@@ -51,7 +51,7 @@ body {
 .tf-bottom-group {
   position: absolute;
   bottom: 39px;              /* ← AJUSTADO: mais próximo do fundo */
-  left: 46%;
+  left: 49%;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
