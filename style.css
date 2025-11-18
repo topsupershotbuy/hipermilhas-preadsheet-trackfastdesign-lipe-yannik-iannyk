@@ -47,32 +47,49 @@ body {
   padding: 40px 60px;
 }
 
-/* GRID DE THUMBNAILS (4 imagens em linha) */
+/* 
+  GRID DE THUMBNAILS (4 imagens em linha)
+  CORREÇÃO: formato original das imagens, sem forçar quadrado
+*/
 .tf-thumbnails-grid {
   position: absolute;
-  top: 50px;                    /* ← Distância do topo */
-  left: 60px;                   /* ← Distância da esquerda */
+  
+  /* Centraliza horizontalmente */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* Posição vertical ajustada */
+  top: 30%;
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* ← 4 colunas iguais */
-  gap: 13px;                    /* ← Espaço entre thumbnails */
-  width: 600px;                 /* ← Largura total do grid */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  
+  /* Largura proporcional ao card */
+  width: 58%;
+  max-width: 650px;
+
   z-index: 2;
 }
 
-/* CADA THUMBNAIL */
+/* 
+  CADA THUMBNAIL 
+  FORMATO ORIGINAL: sem aspect-ratio forçado, sem height fixa
+*/
 .tf-thumbnail {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;          /* ← Quadrado perfeito */
-  object-fit: cover;            /* ← Corta imagem para caber sem distorcer */
-  border-radius: 12px;          /* ← Cantos arredondados */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);  /* ← Sombra */
-  transition: transform 0.3s ease;  /* ← Animação suave */
+  height: auto;              /* ← Mantém proporção original da imagem */
+  object-fit: contain;       /* ← Mostra imagem completa, sem cortar */
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+  display: block;
 }
 
 /* EFEITO HOVER (quando passar mouse) */
 .tf-thumbnail:hover {
-  transform: scale(1.10);       /* ← Aumenta 10% ao passar mouse */
+  transform: scale(1.10);
 }
 
 /* GRUPO INFERIOR: ONDA + ASSINATURA */
@@ -126,9 +143,9 @@ body {
   }
 
   .tf-thumbnails-grid {
-    top: 40px;
-    left: 40px;
-    width: 520px;
+    top: 28%;
+    width: 70%;
+    max-width: 520px;
     gap: 14px;
   }
 
@@ -156,9 +173,8 @@ body {
   }
 
   .tf-thumbnails-grid {
-    top: 30px;
-    left: 30px;
-    width: 100%;
+    top: 22%;
+    width: 85%;
     max-width: 400px;
     gap: 10px;
   }
@@ -176,5 +192,4 @@ body {
   .tf-assinatura-container {
     width: 40px;
   }
-}
 }
